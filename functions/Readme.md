@@ -1,0 +1,1 @@
+[![Build Status](https://daron.visualstudio.com/teknolot/_apis/build/status/teknolot-landing-page-functions?branchName=master)](https://daron.visualstudio.com/teknolot/_build/latest?definitionId=38?branchName=master)
