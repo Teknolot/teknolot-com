@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -37,18 +37,18 @@
     </div>
   </script>
   <script>
-    $(document).ready(function() {
-      var source   =  $("#post-template").html();
-      var template = Handlebars.compile(source);
+     const source = document.querySelector("#post-template").innerHTML;
+     const template = Handlebars.compile(source);
 
-      $.getJSON("https://teknolotlandingpage.blob.core.windows.net/json/lastposts.json", function( data ) {
-        $.each( data, function( key, val ) {
-          $("#posts").append(template(val));
-        });
-        $("#posts").append("<p/>");
-      });
+    async function renderLastBlogPosts() {
+        const response = await fetch("https://teknolotlandingpage.blob.core.windows.net/json/lastposts.json");
+        const data = await response.json();
 
-    });
+        data.map(d => document.querySelector("#posts").innerHTML += template(d));
+        document.querySelector("#posts").innerHTML +="<p/>";
+    }
+
+     document.addEventListener('DOMContentLoaded', renderLastBlogPosts, false);
   </script>
 </head>
 
@@ -426,7 +426,6 @@
     </div>
   </footer>
   <!-- Core -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../assets/vendor/popper/popper.min.js"></script>
   <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
   <script src="../assets/vendor/headroom/headroom.min.js"></script>
