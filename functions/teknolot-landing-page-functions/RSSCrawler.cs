@@ -16,7 +16,7 @@ namespace teknolot_landing_page_functions
     public static class RSSCrawler
     {
         [FunctionName("RSSCrawler")]
-        public static async void RunAsync([TimerTrigger("*/10 * * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
+        public static async void RunAsync([TimerTrigger("0 */10 * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
