@@ -16,6 +16,40 @@
   <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.0.1" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script> 
+  <script id="post-template" type="text/x-handlebars-template">
+    <div class="card shadow shadow-lg--hover mt-5">
+      <div class="card-body">
+        <div class="d-flex px-3">
+          <div>
+            <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+              <i class="fa fa-file-text-o"></i>
+            </div>
+          </div>
+          <div class="pl-4">
+            <h5 class="title text-success">{{Title}}</h5>
+            <p>{{Author}}</p>
+            <a href="{{Url}}" class="text-success">Okumaya git</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script>
+    $(document).ready(function() {
+      var source   =  $("#post-template").html();
+      var template = Handlebars.compile(source);
+
+      $.getJSON("https://teknolotlandingpage.blob.core.windows.net/json/lastposts.json", function( data ) {
+        $.each( data, function( key, val ) {
+          $("#posts").append(template(val));
+        });
+        $("#posts").append("<p/>");
+      });
+
+    });
+  </script>
 </head>
 
 <body>
@@ -344,7 +378,7 @@
                 <img src="../assets/img/ill/ill-2.svg" class="img-center img-fluid">
               </div>
             </div>
-            <div class="col-lg-6 order-lg-1">
+            <div class="col-lg-6 order-lg-1" id="posts">
               <div class="d-flex px-3">
                 <div>
                   <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
@@ -354,39 +388,6 @@
                 <div class="pl-4">
                   <h4 class="display-3 text-white">Son yazılanlar</h4>
                   <p class="text-white">Bayraklıların son yazdıklarından sadece ikisi burada. Fazlası için onların bloglarına gitmekte fayda var.</p>
-                </div>
-              </div>
-              <div class="card shadow shadow-lg--hover mt-5">
-                <div class="card-body">
-                  <div class="d-flex px-3">
-                    <div>
-                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                        <i class="fa fa-file-text-o"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h5 class="title text-success">Azure Functions Ile Linux'te Python</h5>
-                      <p>Daron Yöndem</p>
-                      <a href="http://daron.yondem.com" class="text-success">Okumaya git</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card shadow shadow-lg--hover mt-5">
-                <div class="card-body">
-                  <div class="d-flex px-3">
-                    <div>
-                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                        <i class="fa fa-file-text-o"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4 ">
-                      <h5 class="title text-success">AppCenter Push Notification</h5>
-                      <p>Yiğit Özaksüt</p>
-                      <a href="http://ozaksut.com" class="text-success">Okumaya git</a>
-                      <p></p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
