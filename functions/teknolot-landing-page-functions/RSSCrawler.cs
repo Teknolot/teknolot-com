@@ -22,7 +22,7 @@ namespace teknolot_landing_page_functions
 
             List<string> rssEndPoints = new List<string>
             {
-                "http://daron.yondem.com/rss",
+                "https://daron.blog/section/software/feed/",
                 "http://ozaksut.com/feed/",
                 "http://cihanyakar.com/rss"
             };
