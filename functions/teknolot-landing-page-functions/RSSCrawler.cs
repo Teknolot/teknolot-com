@@ -20,9 +20,10 @@ namespace teknolot_landing_page_functions
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
+            //Who did embed this? Oh that was me!
             List<string> rssEndPoints = new List<string>
             {
-                "https://daron.blog/section/software/feed/",
+                "https://daron.blog/index.xml",
                 "http://ozaksut.com/feed/",
                 "http://cihanyakar.com/rss"
             };
