@@ -16,7 +16,7 @@
   <meta property="og:description" content="Gönüllü yazılımcılar gönüllü işler yapıyorlar" />
   <meta property="og:type" content="website" />
 
-  <meta name="description" content="Gönüllü yazılımcılar gönüllü işler yapıyorlar"/>
+  <meta name="description" content="Gönüllü yazılımcılar gönüllü işler yapıyorlar" />
 
   <!-- Favicon -->
   <link href="../assets/img/brand/favicon.ico" rel="icon">
@@ -28,7 +28,7 @@
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.0.1" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script> 
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
   <script id="post-template" type="text/x-handlebars-template">
     <div class="card shadow shadow-lg--hover mt-5">
       <div class="card-body">
@@ -48,18 +48,18 @@
     </div>
   </script>
   <script>
-     const source = document.querySelector("#post-template").innerHTML;
-     const template = Handlebars.compile(source);
+    const source = document.querySelector("#post-template").innerHTML;
+    const template = Handlebars.compile(source);
 
     async function renderLastBlogPosts() {
-        const response = await fetch("https://teknolotlandingpage.blob.core.windows.net/json/lastposts.json");
-        const data = await response.json();
+      const response = await fetch("https://teknolotlandingpage.blob.core.windows.net/json/lastposts.json");
+      const data = await response.json();
 
-        data.map(d => document.querySelector("#posts").innerHTML += template(d));
-        document.querySelector("#posts").innerHTML +="<p/>";
+      data.map(d => document.querySelector("#posts").innerHTML += template(d));
+      document.querySelector("#posts").innerHTML += "<p/>";
     }
 
-     document.addEventListener('DOMContentLoaded', renderLastBlogPosts, false);
+    document.addEventListener('DOMContentLoaded', renderLastBlogPosts, false);
   </script>
 </head>
 
@@ -70,7 +70,8 @@
         <a class="navbar-brand mr-lg-5" href="../index.html">
           <img src="../assets/img/brand/white.png">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+          aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbar_global">
@@ -82,7 +83,8 @@
                 </a>
               </div>
               <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global"
+                  aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                   <span></span>
                   <span></span>
                 </button>
@@ -91,29 +93,33 @@
           </div>
           <ul class="navbar-nav align-items-lg-center ml-lg-auto">
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://twitter.com/teknolot" target="_blank" data-toggle="tooltip" title="Twitter'da takip edin">
+              <a class="nav-link nav-link-icon" href="https://twitter.com/teknolot" target="_blank"
+                data-toggle="tooltip" title="Twitter'da takip edin">
                 <i class="fa fa-twitter"></i>
                 <span class="nav-link-inner--text d-lg-none">Twitter</span>
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="http://youtube.teknolot.com" target="_blank" data-toggle="tooltip" title="YouTube'da izleyin">
-                  <i class="fa fa-youtube-play"></i>
-                  <span class="nav-link-inner--text d-lg-none">Youtube</span>
-                </a>
-              </li>
+              <a class="nav-link nav-link-icon" href="http://youtube.teknolot.com" target="_blank" data-toggle="tooltip"
+                title="YouTube'da izleyin">
+                <i class="fa fa-youtube-play"></i>
+                <span class="nav-link-inner--text d-lg-none">Youtube</span>
+              </a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://github.com/teknolot" target="_blank" data-toggle="tooltip" title="Github'da takip edin">
+              <a class="nav-link nav-link-icon" href="https://github.com/teknolot" target="_blank" data-toggle="tooltip"
+                title="Github'da takip edin">
                 <i class="fa fa-github"></i>
                 <span class="nav-link-inner--text d-lg-none">Github</span>
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="http://eepurl.com/dJY5es" target="_blank" data-toggle="tooltip" title="E-Bülten'e kaydolun">
-                  <i class="ni ni-email-83"></i>
-                  <span class="nav-link-inner--text d-lg-none">Github</span>
-                </a>
-              </li>
+              <a class="nav-link nav-link-icon" href="http://eepurl.com/dJY5es" target="_blank" data-toggle="tooltip"
+                title="E-Bülten'e kaydolun">
+                <i class="ni ni-email-83"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -141,7 +147,8 @@
                 <h1 class="display-3  text-white">Gönüllü yazılımcılar
                   <span>gönüllü işler yapıyorlar...</span>
                 </h1>
-                <p class="lead  text-white">Amacımız bildiğimizi düşündüklerimizi karışılık beklemeden paylaşmak. Bize katılın!</p>
+                <p class="lead  text-white">Amacımız bildiğimizi düşündüklerimizi karışılık beklemeden paylaşmak. Bize
+                  katılın!</p>
                 <div class="btn-wrapper">
                   <a href="http://meetup.teknolot.com" class="btn btn-white btn-icon mb-3 mb-sm-3">
                     <span class="btn-inner--icon"><i class="fa fa-meetup"></i></span>
@@ -162,7 +169,8 @@
         </div>
         <!-- SVG separator -->
         <div class="separator separator-bottom separator-skew">
-          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
             <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
           </svg>
         </div>
@@ -181,7 +189,8 @@
                       <i class="fa fa-usd"></i>
                     </div>
                     <h6 class="text-primary text-uppercase">Ücretsiz</h6>
-                    <p class="description mt-3">Ücret yok, para yok. Ne konuşmacısı, ne katılımcısı.. kimse para vermez, almaz. 100% gönüllülük böyle olur.</p>
+                    <p class="description mt-3">Ücret yok, para yok. Ne konuşmacısı, ne katılımcısı.. kimse para vermez,
+                      almaz. 100% gönüllülük böyle olur.</p>
                   </div>
                 </div>
               </div>
@@ -192,7 +201,8 @@
                       <i class="fa fa-thumbs-up"></i>
                     </div>
                     <h6 class="text-success text-uppercase">Doğru</h6>
-                    <p class="description mt-3">Herkes birbirini doğrular. Yanlış bilgiye yer verilmez. Yanlış olan düzeltilir, öyle bırakılmaz.</p>
+                    <p class="description mt-3">Herkes birbirini doğrular. Yanlış bilgiye yer verilmez. Yanlış olan
+                      düzeltilir, öyle bırakılmaz.</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +213,8 @@
                       <i class="fa fa-globe"></i>
                     </div>
                     <h6 class="text-warning text-uppercase">AÇIK</h6>
-                    <p class="description mt-3">Prensiplerinden ödün vermeden herkese açık. Egosuz, rahat, bildiğini paylaşabileceğin bir yer. </p>
+                    <p class="description mt-3">Prensiplerinden ödün vermeden herkese açık. Egosuz, rahat, bildiğini
+                      paylaşabileceğin bir yer. </p>
                   </div>
                 </div>
               </div>
@@ -233,28 +244,30 @@
               </div>
             </div>
             <div class="card shadow shadow-lg--hover mt-5">
-                <div class="card-body">
-                  <div class="d-flex px-3">
-                    <div>
-                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                        <i class="fa fa-calendar-o"></i>
-                      </div>
+              <div class="card-body">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <i class="fa fa-calendar-o"></i>
                     </div>
-                    <div class="pl-4">
-                      <h5 class="title text-success">Global AI On Tour 2021</h5>
-                      <p>Global AI Tour 2021'in Istanbul ayagina bekliyoruz! 48 saatte 12 şehir gezecek olan turun İstanbul ayağını kaçırmayın.
-                      </p>
-                      <p><a href="https://tour.globalai.live/" class="text-success">Kayıt ve Etkinlik Detayları</a></p>
-                    </div>
+                  </div>
+                  <div class="pl-4">
+                    <h5 class="title text-success">Global AI On Tour 2021</h5>
+                    <p>Global AI Tour 2021'in Istanbul ayagina bekliyoruz! 48 saatte 12 şehir gezecek olan turun
+                      İstanbul ayağını kaçırmayın.
+                    </p>
+                    <p><a href="https://tour.globalai.live/" class="text-success">Kayıt ve Etkinlik Detayları</a></p>
                   </div>
                 </div>
               </div>
-           </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- SVG separator -->
       <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
@@ -268,47 +281,55 @@
           </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">	
-                <div class="px-4">	
-                  <img src="../assets/img/brand/speaker-1.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">	
-                  <div class="pt-4 text-center">	
-                    <h5 class="title">	
-                      <span class="d-block mb-1">Daron Yöndem</span>	
-                      <small class="h6 text-muted">Azure PaaS'cı.</small>	
-                    </h5>	
-                    <div class="mt-3">	
-                      <a href="http://www.twitter.com/daronyondem" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">	
-                        <i class="fa fa-twitter"></i>	
-                      </a>	
-                      <a href="http://daron.me" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">	
-                        <i class="fa fa-dribbble"></i>	
-                      </a>	
-                      <a href="http://www.github.com/daronyondem" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">	
-                        <i class="fa fa-github"></i>	
-                      </a>	
-                      <a href="https://www.youtube.com/user/daronyondem" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">	
-                        <i class="fa fa-youtube"></i>	
-                      </a>	
-                      <a href="https://www.instagram.com/daronyondem" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">	
-                        <i class="fa fa-instagram"></i>	
-                      </a>	
-                    </div>	
-                  </div>	
-                </div>	
-              </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
             <div class="px-4">
-              <img src="../assets/img/brand/speaker-2.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+              <img src="../assets/img/brand/speaker-1.jpg"
+                class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+              <div class="pt-4 text-center">
+                <h5 class="title">
+                  <span class="d-block mb-1">Daron Yöndem</span>
+                  <small class="h6 text-muted">Azure PaaS'cı.</small>
+                </h5>
+                <div class="mt-3">
+                  <a href="http://www.twitter.com/daronyondem" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="http://daron.me" target="_blank" class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-dribbble"></i>
+                  </a>
+                  <a href="http://www.github.com/daronyondem" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-github"></i>
+                  </a>
+                  <a href="https://www.youtube.com/user/daronyondem" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                  <a href="https://www.instagram.com/daronyondem" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="px-4">
+              <img src="../assets/img/brand/speaker-2.jpg"
+                class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
               <div class="pt-4 text-center">
                 <h5 class="title">
                   <span class="d-block mb-1">Yiğit Özaksüt</span>
                   <small class="h6 text-muted">Son Xamarin'ci</small>
                 </h5>
                 <div class="mt-3">
-                  <a href="https://twitter.com/ozaksuty" target="_blank" class="btn btn-primary btn-icon-only rounded-circle">
+                  <a href="https://twitter.com/ozaksuty" target="_blank"
+                    class="btn btn-primary btn-icon-only rounded-circle">
                     <i class="fa fa-twitter"></i>
                   </a>
-                  <a href="http://www.github.com/ozaksuty" target="_blank" class="btn btn-primary btn-icon-only rounded-circle">
+                  <a href="http://www.github.com/ozaksuty" target="_blank"
+                    class="btn btn-primary btn-icon-only rounded-circle">
                     <i class="fa fa-github"></i>
                   </a>
                   <a href="http://ozaksut.com/" target="_blank" class="btn btn-primary btn-icon-only rounded-circle">
@@ -318,31 +339,38 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
             <div class="px-4">
-              <img src="../assets/img/brand/speaker-4.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+              <img src="../assets/img/brand/speaker-4.jpg"
+                class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
               <div class="pt-4 text-center">
                 <h5 class="title">
                   <span class="d-block mb-1">Cihan Yakar</span>
                   <small class="h6 text-muted">Ankara'dan katılıyor</small>
                 </h5>
                 <div class="mt-3">
-                  <a href="https://twitter.com/cihanyakar" target="_blank" class="btn btn-info btn-icon-only rounded-circle">
+                  <a href="https://twitter.com/cihanyakar" target="_blank"
+                    class="btn btn-info btn-icon-only rounded-circle">
                     <i class="fa fa-twitter"></i>
                   </a>
-                  <a href="https://www.facebook.com/cihanyakar" target="_blank" class="btn btn-info btn-icon-only rounded-circle">
+                  <a href="https://www.facebook.com/cihanyakar" target="_blank"
+                    class="btn btn-info btn-icon-only rounded-circle">
                     <i class="fa fa-facebook"></i>
                   </a>
-                  <a href="https://about.me/cihanyakar/"  target="_blank" class="btn btn-info btn-icon-only rounded-circle">
+                  <a href="https://about.me/cihanyakar/" target="_blank"
+                    class="btn btn-info btn-icon-only rounded-circle">
                     <i class="fa fa-dribbble"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
             <div class="px-4">
-              <img src="../assets/img/brand/speaker-3.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+              <img src="../assets/img/brand/speaker-3.jpg"
+                class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
               <div class="pt-4 text-center">
                 <h5 class="title">
                   <span class="d-block mb-1">Bilgin Ercüment Biltekin</span>
@@ -362,38 +390,74 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="section pb-0 bg-gradient-success">
-        <div class="container">
-          <div class="row row-grid align-items-center">
-            <div class="col-md-6 order-lg-2 ml-lg-auto">
-              <div class="position-relative pl-md-5">
-                <img src="../assets/img/ill/ill-2.svg" class="img-center img-fluid">
-              </div>
-            </div>
-            <div class="col-lg-6 order-lg-1" id="posts">
-              <div class="d-flex px-3">
-                <div>
-                  <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i class="fa fa-newspaper-o text-primary"></i>
-                  </div>
-                </div>
-                <div class="pl-4">
-                  <h4 class="display-3 text-white">Son yazılanlar</h4>
-                  <p class="text-white">Bayraklıların son yazdıkları burada. Fazlası için onların bloglarına gitmekte fayda var.</p>
+          <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
+            <div class="px-4">
+              <img src="../assets/img/brand/speaker-5.jpg"
+                class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+              <div class="pt-4 text-center">
+                <h5 class="title">
+                  <span class="d-block mb-1">İlkay İlknur</span>
+                  <small class="h6 text-muted">.NET'çi</small>
+                </h5>
+                <div class="mt-3">
+                  <a href="https://twitter.com/ilkayilknur" class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="https://www.ilkayilknur.com" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-dribbble"></i>
+                  </a>
+                  <a href="http://www.github.com/ilkayilknur" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-github"></i>
+                  </a>
+                  <a href="https://www.youtube.com/user/ilkayilknur" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                  <a href="https://www.instagram.com/ilkayilknur" target="_blank"
+                    class="btn btn-warning btn-icon-only rounded-circle">
+                    <i class="fa fa-instagram"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- SVG separator -->
-        <div class="separator separator-bottom separator-skew zindex-100">
-          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-          </svg>
+      </div>
+      </div>
+    </section>
+    <section class="section pb-0 bg-gradient-success">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="col-md-6 order-lg-2 ml-lg-auto">
+            <div class="position-relative pl-md-5">
+              <img src="../assets/img/ill/ill-2.svg" class="img-center img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1" id="posts">
+            <div class="d-flex px-3">
+              <div>
+                <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                  <i class="fa fa-newspaper-o text-primary"></i>
+                </div>
+              </div>
+              <div class="pl-4">
+                <h4 class="display-3 text-white">Son yazılanlar</h4>
+                <p class="text-white">Bayraklıların son yazdıkları burada. Fazlası için onların bloglarına gitmekte
+                  fayda var.</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
     </section>
     <p>&nbsp;</p>
     <p></p>
@@ -408,25 +472,26 @@
           </div>
         </div>
         <div class="col-md-6">
-            
+
           <ul class="nav nav-footer justify-content-end">
             <li class="nav-item">
               <div class="copyright">
                 <a href="code-of-conduct.html" target="_blank">Code of Conduct</a>
-            </div>
-          </li>
-          <ul class="nav nav-footer justify-content-end">
-            <li class="nav-item">
-              <div class="copyright">
-               &nbsp;&nbsp;| &nbsp;&nbsp;
-            </div>
-          </li>
-            <li class="nav-item">
-                <div class="copyright">
-                Animated with <span style="color:red;">❤</span> by <a href="http://www.teknolot.com" target="_blank"><img style="width:30px" src="../assets/img/brand/teknolot_sign.png" /></a>
               </div>
             </li>
-          </ul>
+            <ul class="nav nav-footer justify-content-end">
+              <li class="nav-item">
+                <div class="copyright">
+                  &nbsp;&nbsp;| &nbsp;&nbsp;
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="copyright">
+                  Animated with <span style="color:red;">❤</span> by <a href="http://www.teknolot.com"
+                    target="_blank"><img style="width:30px" src="../assets/img/brand/teknolot_sign.png" /></a>
+                </div>
+              </li>
+            </ul>
         </div>
       </div>
     </div>

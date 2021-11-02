@@ -24,7 +24,8 @@ namespace teknolot_landing_page_functions
             {
                 "https://daron.blog/index.xml",
                 "http://ozaksut.com/feed/",
-                "http://cihanyakar.com/rss"
+                "http://cihanyakar.com/rss",
+                "https://feeds.feedburner.com/ilkayilknur"
             };
 
             List<FeedItem> feedItems = new List<FeedItem>();
@@ -52,6 +53,8 @@ namespace teknolot_landing_page_functions
                     return "Daron Yöndem";
                 if (Link.Contains("cihan"))
                     return "Cihan Yakar";
+                if (Link.Contains("ilkay"))
+                    return "İlkay İlknur";
                 return string.Empty;
             }
 
