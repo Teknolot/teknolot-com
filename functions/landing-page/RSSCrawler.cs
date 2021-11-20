@@ -15,7 +15,7 @@ namespace landing_page
     public class RSSCrawler
     {
         [FunctionName("RSSCrawler")]
-        public static async Task Run([TimerTrigger("0 * * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
+        public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
