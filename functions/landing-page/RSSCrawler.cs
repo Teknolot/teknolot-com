@@ -1,26 +1,26 @@
 ﻿using CodeHollow.FeedReader;
-using Microsoft.Azure.Storage;
-using Microsoft.Azure.Storage.Blob;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace teknolot_landing_page_functions
+namespace landing_page
 {
-    public static class RSSCrawler
+    public class RSSCrawler
     {
         [FunctionName("RSSCrawler")]
-        public static async void RunAsync([TimerTrigger("0 * * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
+        public static async Task Run([TimerTrigger("0 * * * * *")]TimerInfo myTimer, ILogger log, ExecutionContext context)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
             //Who did embed this? Oh that was me!
-            List<string> rssEndPoints = new List<string>
+            List<string> rssEndPoints = new()
             {
                 "https://daron.blog/index.xml",
                 "http://ozaksut.com/feed/",
@@ -28,7 +28,7 @@ namespace teknolot_landing_page_functions
                 "https://feeds.feedburner.com/ilkayilknur"
             };
 
-            List<FeedItem> feedItems = new List<FeedItem>();
+            List<FeedItem> feedItems = new();
 
             var config = new ConfigurationBuilder()
               .SetBasePath(context.FunctionAppDirectory)
@@ -37,7 +37,7 @@ namespace teknolot_landing_page_functions
               .Build();
             var storageConnectionString = config["AzureWebJobsStorage"];
 
-            List<Task<Feed>> allDownloads = new List<Task<Feed>>();
+            List<Task<Feed>> allDownloads = new();
             foreach (var rssEndPoint in rssEndPoints)
             {
                 allDownloads.Add(FeedReader.ReadAsync(rssEndPoint));
@@ -47,7 +47,7 @@ namespace teknolot_landing_page_functions
             //Feeling proud!
             string FindAuthor(string Link)
             {
-                if(Link.Contains("ozaksut"))
+                if (Link.Contains("ozaksut"))
                     return "Yiğit Özaksüt";
                 if (Link.Contains("daron"))
                     return "Daron Yöndem";
@@ -58,10 +58,10 @@ namespace teknolot_landing_page_functions
                 return string.Empty;
             }
 
-            var latestThreePosts = feeds.SelectMany(x=>x.Items).
+            var latestThreePosts = feeds.SelectMany(x => x.Items).
                 OrderByDescending(x => x.PublishingDate).
                 Take(3).
-                Select(x=> new { Author = FindAuthor(x.Link), x.Title, Url = x.Link });
+                Select(x => new { Author = FindAuthor(x.Link), x.Title, Url = x.Link });
 
             var jsonOutput = JsonConvert.SerializeObject(latestThreePosts);
 
