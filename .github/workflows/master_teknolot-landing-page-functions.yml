@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy dotnet core app to Azure Function App - teknolot-landing-page-functions
+name: Landing Page Functions
 
 on:
   push:
@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: 'v4.0' # set this to the dotnet version to use
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './functions/landing-page' # set this to the path to your web app project, defaults to the repository root
+  DOTNET_VERSION: '6.0' # set this to the dotnet version to use
 
 jobs:
   build-and-deploy:
@@ -36,7 +36,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'teknolot-landing-page-functions'
+          app-name: 'landing-page-functions'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9A0DD6B751348FC8D9E259841DBBFC1 }}
