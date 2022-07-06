@@ -22,7 +22,6 @@ namespace landing_page
             //Who did embed this? Oh that was me!
             List<string> rssEndPoints = new()
             {
-                "https://daron.blog/index.xml",
                 "http://ozaksut.com/feed/",
                 "http://cihanyakar.com/rss",
                 "https://feeds.feedburner.com/ilkayilknur"
@@ -49,8 +48,6 @@ namespace landing_page
             {
                 if (Link.Contains("ozaksut"))
                     return "Yiğit Özaksüt";
-                if (Link.Contains("daron"))
-                    return "Daron Yöndem";
                 if (Link.Contains("cihan"))
                     return "Cihan Yakar";
                 if (Link.Contains("ilkay"))
